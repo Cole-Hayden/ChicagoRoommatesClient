@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Cole-Hayden/ChicagoRoommatesClient.git/static/css/main.5f361e03.chunk.css",
+    "main.js": "/Cole-Hayden/ChicagoRoommatesClient.git/static/js/main.9a53e42c.chunk.js",
+    "main.js.map": "/Cole-Hayden/ChicagoRoommatesClient.git/static/js/main.9a53e42c.chunk.js.map",
+    "runtime-main.js": "/Cole-Hayden/ChicagoRoommatesClient.git/static/js/runtime-main.5f152ebb.js",
+    "runtime-main.js.map": "/Cole-Hayden/ChicagoRoommatesClient.git/static/js/runtime-main.5f152ebb.js.map",
+    "static/js/2.a2ed73ed.chunk.js": "/Cole-Hayden/ChicagoRoommatesClient.git/static/js/2.a2ed73ed.chunk.js",
+    "static/js/2.a2ed73ed.chunk.js.map": "/Cole-Hayden/ChicagoRoommatesClient.git/static/js/2.a2ed73ed.chunk.js.map",
+    "index.html": "/Cole-Hayden/ChicagoRoommatesClient.git/index.html",
+    "precache-manifest.6dbf6cccaef1b7e2efded17aaca58aee.js": "/Cole-Hayden/ChicagoRoommatesClient.git/precache-manifest.6dbf6cccaef1b7e2efded17aaca58aee.js",
+    "service-worker.js": "/Cole-Hayden/ChicagoRoommatesClient.git/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/Cole-Hayden/ChicagoRoommatesClient.git/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.a2ed73ed.chunk.js.LICENSE.txt": "/Cole-Hayden/ChicagoRoommatesClient.git/static/js/2.a2ed73ed.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/Cole-Hayden/ChicagoRoommatesClient.git/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5f152ebb.js",
+    "static/js/2.a2ed73ed.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.9a53e42c.chunk.js"
+  ]
+}
