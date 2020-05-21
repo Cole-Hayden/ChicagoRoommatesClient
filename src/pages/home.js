@@ -4,7 +4,6 @@ import axios from 'axios';
 
 import Scream from '../components/Scream';
 
-
 export class Home extends Component {
     state = {
         screams: null
@@ -21,7 +20,7 @@ export class Home extends Component {
     }
     render() {
         let recentScreamsMarkup = this.state.screams ? (
-        this.state.screams.map((scream) => <Scream scream={scream}/>)
+        this.state.screams.map((scream) => <Scream key={scream.screamId} scream={scream}/>)
         ) : (<p>Loading...</p>);
         return (
             <Grid container>
