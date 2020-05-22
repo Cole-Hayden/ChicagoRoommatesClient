@@ -10,26 +10,16 @@ import Navbar from './components/Navbar';
 import Home from './pages/home';
 import Login from './pages/login';
 import signup from './pages/signup';
+import themeFile from './util/theme';
+import jwtDecode from 'jwt-decode';
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      light: '#33c9dc',
-      main: '#00bcd4',
-      dark: '#008394',
-      contrastText: '#fff'
-    },
-    secondary: {
-      light: '#ff6333',
-      main: '#ff3d00',
-      dark: '#b22a00',
-      contrastText: '#fff'
-    }
-  },
-  typography: {
-    useNextVariants: true
-  }
-});
+const theme = createMuiTheme(themeFile);
+
+const token = localStorage.FBIdToken;
+if(token){
+
+}
+
 function App() {
   return (
     <MuiThemeProvider theme={theme}>
