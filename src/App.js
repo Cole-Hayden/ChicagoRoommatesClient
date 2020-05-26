@@ -12,12 +12,22 @@ import Login from './pages/login';
 import signup from './pages/signup';
 import themeFile from './util/theme';
 import jwtDecode from 'jwt-decode';
+import AuthRoute from './util/AuthRoute';
 
 const theme = createMuiTheme(themeFile);
 
-const token = localStorage.FBIdToken;
-if(token){
 
+const token = localStorage.FBIdToken;
+let authenticated;
+if(token){
+  const decodedToken = jwtDecode(token);
+  if(decodedToken.exp * 1000 < Date.now()){
+    window.location.href = '/login';
+    authenticated = false;
+  } else {
+    authenticated = true;
+  }
+  console.log(decodedToken);
 }
 
 function App() {
@@ -29,9 +39,9 @@ function App() {
         <Navbar/>
         <div class="container">
           <Switch>
-          <Route exact path="/" component={Home}/>
-          <Route exact path="/login" component={Login}/>
-          <Route exact path="/signup" component={signup}/>
+          <AuthRoute exact path="/" component={Home} authenticated = {authenticated}/>
+          <AuthRoute exact path="/login" component={Login} authenticated = {authenticated}/>
+          <AuthRoute exact path="/signup" component={signup} authenticated = {authenticated}/>
           </Switch>
         </div>
       </Router>

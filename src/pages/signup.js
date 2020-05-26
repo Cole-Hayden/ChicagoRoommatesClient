@@ -156,4 +156,4 @@ signup.propTypes = {
     classes: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(login);
+export default signup;
