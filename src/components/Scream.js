@@ -25,6 +25,7 @@ const styles = {
 
 class Scream extends Component {
     render() {
+        dayjs.extend(relativeTime);
         const 
         { classes, scream : 
             { body, createdAt, userImage, userHandle, screamId, likeCount, commentCount} 

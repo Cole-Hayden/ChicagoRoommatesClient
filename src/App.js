@@ -37,7 +37,7 @@ function App() {
   return (
     <MuiThemeProvider theme={theme}>
       <Provider store={store}>
-    <div className="App">
+  
       
       <Router>
         <Navbar/>
@@ -49,7 +49,7 @@ function App() {
           </Switch>
         </div>
       </Router>
-    </div>
+    
     </Provider>
     </MuiThemeProvider>
   );
