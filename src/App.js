@@ -17,6 +17,8 @@ import themeFile from './util/theme';
 import jwtDecode from 'jwt-decode';
 import AuthRoute from './util/AuthRoute';
 
+import { logoutUser, getUserData } from './redux/actions/userActions';
+
 const theme = createMuiTheme(themeFile);
 
 
@@ -31,20 +33,19 @@ if(token){
     authenticated = true;
   }
   console.log(decodedToken);
+  console.log(authenticated);
 }
 
 function App() {
   return (
     <MuiThemeProvider theme={theme}>
       <Provider store={store}>
-  
-      
-      <Router>
+        <Router>
         <Navbar/>
         <div class="container">
           <Switch>
           <Route exact path="/" component={Home} authenticated = {authenticated}/>
-          <Route exact path="/login" component={login} authenticated = {authenticated} />
+          <AuthRoute exact path="/login" component={login} authenticated = {authenticated} />
           <AuthRoute exact path="/signup" component={signup} authenticated = {authenticated}/>
           </Switch>
         </div>
