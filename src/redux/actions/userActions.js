@@ -26,6 +26,9 @@ export const loginUser = (userData, history) => (dispatch) => {
 export const signupUser = (newUserData, history) => (dispatch) => {
 
     dispatch({ type: 'LOADING_UI'});
+    console.log(newUserData);
+
+    
     axios
     .post('/signup', newUserData)
     .then((res) => {
@@ -35,6 +38,8 @@ export const signupUser = (newUserData, history) => (dispatch) => {
       history.push('/');
     })
     .catch((err) => {
+        console.log('HERE');
+        console.log(err);
         dispatch({
             type: 'SET_ERRORS',
             payload: err.response.data
