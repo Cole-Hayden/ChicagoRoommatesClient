@@ -45,11 +45,11 @@ export class signup extends Component {
     constructor(){
         super();
         this.state = {
-            email: '',
-            password: '',
-            confirmPassword: '',
-            handle: '',
-            errors: {}
+            "email": '',
+            "password": '',
+            "confirmPassword": '',
+            "handle": '',
+            "errors": {}
         }
     }
     componentWillReceiveProps(nextProps) {
