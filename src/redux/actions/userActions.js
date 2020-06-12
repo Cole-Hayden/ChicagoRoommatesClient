@@ -3,6 +3,7 @@ import axios from 'axios';
 
 
 export const loginUser = (userData, history) => (dispatch) => {
+    console.log('here');
 
     dispatch({ type: 'LOADING_UI'});
     axios
@@ -12,15 +13,25 @@ export const loginUser = (userData, history) => (dispatch) => {
       dispatch(getUserData());
       dispatch({ type: CLEAR_ERRORS });
       history.push('/');
+      console.log('success');
     })
     .catch((err) => {
+        console.log('error');
         dispatch({
             type: 'SET_ERRORS',
             payload: err.response.data
     })
     });
 };
-
+export const editUserDetails = (userDetails) => (dispatch) => {
+    dispatch({ type: 'LOADING_USER' });
+    axios
+      .post('/user', userDetails)
+      .then(() => {
+        dispatch(getUserData());
+      })
+      .catch((err) => console.log(err));
+  };
 
 
 export const signupUser = (newUserData, history) => (dispatch) => {
@@ -47,19 +58,32 @@ export const signupUser = (newUserData, history) => (dispatch) => {
     });
 };
 
+export const uploadImage = (formData) => (dispatch) => {
+    dispatch({ type: 'LOADING_USER' });
+    console.log("THIS" + formData);
+    axios.post('/user/image', formData)
+    .then(() => {
+        dispatch(getUserData());
+    })
+    .catch(err => console.log(err));
+}
+
 const setAuthorizationHeader = (token) => {
     const FBIdToken = `Bearer ${token}`;
+    console.log(FBIdToken);
       localStorage.setItem('FBIdToken', FBIdToken);
       axios.defaults.headers.common['Authorization'] = `FBIdToken`;
 };
 
 export const logoutUser = () => (dispatch) => {
+    console.log('here');
     localStorage.removeItem('FBIdToken');
     delete axios.defaults.headers.common['Authorization'];
     dispatch({ type: 'SET_UNAUTHENTICATED' });
 };
 
 export const getUserData = () => (dispatch) => {
+    console.log('here');
     dispatch({ type: 'LOADING_USER' });
     axios.get('/user')
     .then(res => {
@@ -68,5 +92,5 @@ export const getUserData = () => (dispatch) => {
             payload: res.data
         })
     })
-    .catch(err => console.log(err));
+    .catch(err =>{ console.log('its an error'); console.log(err)});
 };

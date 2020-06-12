@@ -25,6 +25,7 @@ const theme = createMuiTheme(themeFile);
 const token = localStorage.FBIdToken;
 let authenticated;
 if(token){
+  console.log(token);
   const decodedToken = jwtDecode(token);
   if(decodedToken.exp * 1000 < Date.now()){
     store.dispatch(logoutUser());
@@ -33,6 +34,7 @@ if(token){
     store.dispatch({ type: 'SET_AUTHENTICATED'});
     axios.defaults.headers.common['Authorization'] = token;
     authenticated = true;
+    store.dispatch(getUserData());
   }
   console.log(decodedToken);
   console.log(authenticated);
