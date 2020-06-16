@@ -13,8 +13,8 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import IconButton from '@material-ui/core/IconButton';
-import EditIcon from '@material-ui/icons/Edit';
+import MyButton from '../util/MyButton';
+import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
 
 const styles = {
     paper: {
@@ -55,6 +55,9 @@ const styles = {
         cursor: 'pointer'
       }
     }
+  },
+  button: {
+    float: 'right'
   },
   buttons: {
     textAlign: 'center',
@@ -114,11 +117,10 @@ class EditDetails extends Component {
         const { classes } = this.props;
         return (
             <Fragment>
-                <Tooltip title="Edit Details" placement="top">
-                    <IconButton onClick={this.handleOpen} className={classes.button}>
-                        <EditIcon color="primary"/>
-                        </IconButton>
-                    </Tooltip>
+                
+                    <MyButton tip="Edit details" onClick={this.handleOpen} btnClassName={classes.button}>
+                        <KeyboardReturn color="primary"/>
+                    </MyButton>
                 <Dialog open={this.state.open}
                 onClose={this.handleClose}
                 fullWidth

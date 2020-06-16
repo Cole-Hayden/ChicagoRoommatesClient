@@ -15,6 +15,7 @@ import IconButton from '@material-ui/core/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
 import ToolTip from '@material-ui/core/Tooltip';
 import EditDetails from './EditDetails';
+import MyButton from '../util/MyButton';
 
 import MuiLink from '@material-ui/core/Link';
 
@@ -113,6 +114,9 @@ class Profile extends Component {
                     hidden="hidden"
                     onChange={this.handleImageChange}
                   />
+                  <MyButton tip="Edit Profile picture" onClick={this.handleEditPicture} btnClassName="button">
+                    <KeyboardReturn color="primary"/>
+                  </MyButton>
                 </div>
                 <hr />
                 <div className="profile-details">
@@ -146,9 +150,9 @@ class Profile extends Component {
                   <CalendarToday color="primary" />{' '}
                   <span>Joined {dayjs(createdAt).format('MMM YYYY')}</span>
                 </div>
-                <ToolTip title="Logout" onClick={this.handleLogout}>
-                  <KeyboardReturn color="primary"/>
-                </ToolTip>
+                <MyButton tip="Logout" onClick={this.handleLogout}>
+                <KeyboardReturn color="primary"/>
+                  </MyButton>
                 <EditDetails />
               </div>
             </Paper>
