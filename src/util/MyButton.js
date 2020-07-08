@@ -8,6 +8,6 @@ export default ({children, onClick, tip, btnClassName, tipClassName }) =>  (
             {children}
         </IconButton>
     </Tooltip>
-)
+);
 
 

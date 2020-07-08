@@ -11,12 +11,17 @@ import { getScreams } from '../redux/actions/dataActions';
 export class Home extends Component {
     
     componentDidMount(){
+        console.log('testing before');
         this.props.getScreams();
+        console.log('test');
     }
     render() {
         const { screams, loading } = this.props.data;
-        let recentScreamsMarkup = loading ? ( screams.map((scream) => <Scream key={scream.screamId} scream={scream} />))
-         : (<p>Loading...</p>);
+        let recentScreamsMarkup = !loading ? (
+             screams.map((scream) => <Scream key={scream.screamId} scream={scream} />)
+             ) : (
+             <p>Loading...</p>
+                 );
         return (
             <Grid container>
                 <Grid item sm={8} xs={12}>
@@ -27,7 +32,7 @@ export class Home extends Component {
                 </Grid>
 
             </Grid>
-        )
+        );
     }
 }
 
