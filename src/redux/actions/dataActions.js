@@ -34,8 +34,31 @@ export const likeScream = (screamId) => dispatch => {
     .catch(err => console.log(err));
 }
 
+//Post a scream
+export const postScream = (newScream) => (dispatch) => {
+    dispatch({ type: 'LOADING_UI'});
+    axios.post('/scream', newScream)
+    .then(res=> {
+        console.log('test!');
+        dispatch({
+            type: 'POST_SCREAM',
+            payload: res.data
+        });
+        dispatch({ type: 'CLEAR_ERRORS'});
+    })
+    .catch(err => {
+        console.log('test! false');
+        dispatch({
+            
+            type: 'SET_ERRORS',
+            payload: err.response.data
+        })
+    })
+}
 
-
+export const clearErrors = () => (dispatch) => {
+    dispatch({ type: 'CLEAR_ERRORS' });
+  };
 
 // Unlike a scream
 

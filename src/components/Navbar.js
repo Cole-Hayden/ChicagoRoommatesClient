@@ -4,6 +4,7 @@ import Link from 'react-router-dom/Link';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
+import PostScream from './PostScream';
 
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -20,9 +21,7 @@ class Navbar extends Component {
                 <Toolbar className="nav-container">
                     {authenticated ? (
                         <Fragment>  
-                            <MyButton tip="Post a Scream!">
-                                <AddIcon color="primary"/>
-                            </MyButton>
+                            <PostScream/>
                             <MyButton tip="Home">
                                 <HomeIcon color="primary"/>
                             </MyButton>

@@ -23,7 +23,11 @@ import { connect } from 'react-redux';
 import { deleteScream } from '../redux/actions/dataActions';
 
 const styles = {
-
+    deleteButton: {
+        position: 'absolute',
+        left: '90%',
+        top: '10%'
+    }
 }
 
 class DeleteScream extends Component {

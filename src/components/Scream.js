@@ -21,8 +21,9 @@ import DeleteScream from './DeleteScream';
 
 const styles = {
     card: {
+        position: 'relative',
         display: 'flex',
-        marginBottom: 20,
+        marginBottom: 20
     },
     image: {
         minWidth: 200,
