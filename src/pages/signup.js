@@ -49,7 +49,8 @@ export class signup extends Component {
             "password": '',
             "confirmPassword": '',
             "handle": '',
-            "errors": {}
+            "errors": {},
+            "test": ''
         }
     }
     componentWillReceiveProps(nextProps) {
@@ -66,7 +67,8 @@ export class signup extends Component {
             email: this.state.email,
             password: this.state.password,
             confirmPassword: this.state.confirmPassword,
-            handle: this.state.handle
+            handle: this.state.handle,
+            test: this.state.test
         };
         this.props.signupUser(newUserData, this.props.history);
     };
@@ -116,7 +118,7 @@ export class signup extends Component {
             <TextField
               id="confirmPassword"
               name="confirmPassword"
-              type="confirmPassword"
+              type="password"
               label="Confirm Password"
               className={classes.textField}
               helperText={errors.confirmPassword}
@@ -125,6 +127,95 @@ export class signup extends Component {
               onChange={this.handleChange}
               fullWidth
             />
+            <select id="areas" name="area" onChange={this.handleChange} class="form-control form-control-lg">
+              <option>Wicker Park</option>
+              <option>Rogers Park</option>
+              <option>Washington Park</option>
+              <option>West Ridge</option>
+              <option>Hyde Park</option>
+              <option>Woodlawn</option>
+              <option>Lincoln Square</option>
+              <option>South Shore</option>
+              <option>North Center</option>
+              <option>Chatham</option>
+              <option>Lake View</option>
+              <option>Avalon Park</option>
+              <option>Lincoln Park</option>
+              <option>South Chicago</option>
+              <option>Near North Side</option>
+              <option>Burnside</option>
+              <option>Edison Park</option>
+              <option>Calumet Heights</option>
+              <option>Norwood Park</option>
+              <option>Roseland</option>
+              <option>Jefferson Park</option>
+              <option>Pullman</option>
+              <option>Forest Glen</option>
+              <option>South Deering</option>
+              <option>North Park</option>
+              <option>East Side</option>
+              <option>Albany Park</option>
+              <option>West Pullman</option>
+              <option>Portage Park</option>
+              <option>Riverdale</option>
+              <option>Irving Park</option>
+              <option>Hegewisch</option>
+              <option>Dunning</option>
+              <option>Garfield Ridge</option>
+              <option>Montclare</option>
+              <option>Archer Heights</option>
+              <option>Belmont Cragin</option>
+              <option>Brighton Park</option>
+              <option>Hermosa</option>
+              <option>Mckinley Park</option>
+              <option>Avondale</option>
+              <option>Bridgeport</option>
+              <option>Logan Square</option>
+              <option>New City</option>
+              <option>Humboldt Park</option>
+              <option>West Elsdon</option>
+              <option>West Town</option>
+              <option>Gage Park</option>
+              <option>Austin</option>
+              <option>Clearing</option>
+              <option>West Garfield Park</option>
+              <option>West Lawn</option>
+              <option>East Garfield Park</option>
+              <option>Chicago Lawn</option>
+              <option>Near West Side</option>
+              <option>West Englewood</option>
+              <option>West Englewood</option>
+
+              <option>North Lawndale</option>
+
+              <option>Englewood</option>
+
+              <option>South Lawndale</option>
+              <option>Greater Grand Crossing</option>
+
+              <option>Lower West Side</option>
+
+              <option>Ashburn</option>
+              <option>Loop</option>
+              <option>Auburn Gresham</option>
+              <option>Near South Side</option>
+              <option>Beverly</option>
+              <option>Armour Square</option>
+              <option>Washington Heights</option>
+              <option>Douglas</option>
+              <option>Mount Greenwood</option>
+              <option>Oakland</option>
+              <option>Morgan Park</option>
+              <option>Fuller Park</option>
+              <option>Ohare</option>
+              <option>Grand Boulevard</option>
+              <option>Edgewater</option>
+              <option>Kenwood</option>
+
+
+
+
+            </select>
             <TextField
               id="handle"
               name="handle"
@@ -134,6 +225,18 @@ export class signup extends Component {
               helperText={errors.handle}
               error={errors.handle ? true : false}
               value={this.state.handle}
+              onChange={this.handleChange}
+              fullWidth
+            />
+            <TextField
+              id="test"
+              name="test"
+              type="text"
+              label="test"
+              className={classes.textField}
+              helperText={errors.handle}
+              error={errors.handle ? true : false}
+              value={this.state.test}
               onChange={this.handleChange}
               fullWidth
             />

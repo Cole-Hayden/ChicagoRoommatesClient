@@ -65,7 +65,7 @@ export const uploadImage = (formData) => (dispatch) => {
     .then(() => {
         dispatch(getUserData());
     })
-    .catch(err => console.log(err));
+    .catch(err => console.log('WTF'));
 }
 
 const setAuthorizationHeader = (token) => {
